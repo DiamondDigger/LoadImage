@@ -15,14 +15,19 @@ import java.io.IOException;
 class loadImageApp extends Component {
 
     BufferedImage img;
+    BufferedImage img1;
 
     public void paint(Graphics g) {
-        g.drawImage(img, 0, 0, null);
+        g.drawImage(img, 0, 0, null); // position of image
+        g.drawImage(img1, 520, 0, null); // move right second image cause cover first one
     }
 
+
+    //load to images
     public loadImageApp() {
         try {
-            img = ImageIO.read(new File("src/Loading/animal.jpg"));
+            img = ImageIO.read(new File("src/Loading/recourses/animal.jpg"));
+            img1 = ImageIO.read(new File("src/Loading/recourses/dog.jpg"));
         } catch (IOException e) {
         }
 
@@ -30,7 +35,7 @@ class loadImageApp extends Component {
 
     public Dimension getPreferredSize() {
         if (img == null) {
-            return new Dimension(100, 100);
+            return new Dimension(300, 500);
         } else {
             return new Dimension(img.getWidth(null), img.getHeight(null));
         }
@@ -42,7 +47,7 @@ class loadImageApp extends Component {
 
         f.addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
-                System.exit(1000);
+                System.exit(0);
             }
         });
 
