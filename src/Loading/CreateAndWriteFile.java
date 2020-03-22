@@ -18,7 +18,8 @@ public class CreateAndWriteFile {
         fileWriter.close();
         System.out.println("Successfully wrote the file!");
 
-        sleep(5000);
+        sleep(1000);
+        System.out.println("Sleeping 5 seconds");
         file.delete();
         System.out.println("Deleted file");
     }
