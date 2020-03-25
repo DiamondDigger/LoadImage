@@ -16,10 +16,12 @@ class loadImageApp extends Component {
 
     BufferedImage img;
     BufferedImage img1;
+    BufferedImage img2;
 
     public void paint(Graphics g) {
         g.drawImage(img, 0, 0, null); // position of image
         g.drawImage(img1, 520, 0, null); // move right second image cause cover first one
+        g.drawImage(img1, 1050, 0, null); // move right second image cause cover first one
     }
 
 
@@ -28,7 +30,9 @@ class loadImageApp extends Component {
         try {
             img = ImageIO.read(new File("src/Loading/recourses/animal.jpg"));
             img1 = ImageIO.read(new File("src/Loading/recourses/dog.jpg"));
+            img2 = ImageIO.read(new File("src/Loading/recourses/dog.jpg"));
         } catch (IOException e) {
+            System.err.println("COULDN'T LOAD AN IMAGE");
         }
 
     }

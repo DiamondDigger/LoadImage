@@ -13,14 +13,18 @@ public class CreateAndWriteFile {
             System.out.println("File log.txt is created");
         }
 
+        String text = "\nD:\\\\home_Projects\\\\udemy\\\\practice-java-building-projects\\\\Images\\\\src\\\\Loading\\\\log.txt";
+
         FileWriter fileWriter = new FileWriter("D:\\home_Projects\\udemy\\practice-java-building-projects\\Images\\src\\Loading\\log.txt");
         fileWriter.write("Yeeeeh! We'v done it !! Great job! Write another one! ");
-        fileWriter.close();
+//        fileWriter.close();
         System.out.println("Successfully wrote the file!");
 
-        sleep(1000);
+        fileWriter.write(text);
+        fileWriter.close();
+        sleep(5000);
         System.out.println("Sleeping 5 seconds");
-        file.delete();
+       file.delete();
         System.out.println("Deleted file");
     }
 }
